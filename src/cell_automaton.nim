@@ -36,13 +36,10 @@ proc main() =
   let line = toSeq(0..<nb.width).mapIt(it == half)
   let mtx = automaton(line, nb.height - 2)
 
-  nb.print(0, 0, $nb.width & "x" & $nb.height)
   for r in 0 ..< mtx.len:
     for c in 0 ..< mtx[r].len: 
       let s = if mtx[r][c]: "#" else: " "
       nb.print(c, r, s)
-
-
   nb.present()
 
   while true:
